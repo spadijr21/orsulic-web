@@ -290,6 +290,53 @@
     html{scroll-behavior:auto}
     .ticker div{animation:none}
   }
+
+  /* ===== PLAVA (boje uzete iz loga) ===== */
+  :root{--navy:#0e1b2e;--navy-line:#22344f;--blue:#1e9bf0;--blue-deep:#0b4a8f}
+
+  /* 1) Tamnoplave pozadine – izmjenjuju se s crnima */
+  .split .txt,.faq,footer{background:var(--navy)}
+  .split .txt p,.qa p{color:#c3cede}
+  .stats span{color:#8fa3bf}
+  .qa,.qa details{border-color:var(--navy-line)}
+  footer{border-top:3px solid var(--blue);color:#8fa3bf}
+
+  /* 2) Svijetloplavi detalji */
+  .strip .lbl.after{background:var(--blue);color:#fff}
+  .qa summary::after{color:var(--blue)}
+  .qa a,footer a:hover{color:var(--blue)}
+  .row.spec .n{color:var(--blue)}
+  .row.spec:hover{background:var(--blue);color:#fff}
+  .row.spec:hover .n,.row.spec:hover p{color:#fff}
+  @media (hover:hover){ .strip img:hover{border-color:var(--blue)} }
+  .lb button:hover{border-color:var(--blue);color:var(--blue)}
+
+  /* 3) Blok specijalnosti: čišćenje usisa */
+  .clean{background:linear-gradient(135deg,var(--blue-deep) 0%,#0a2a55 60%,var(--navy) 100%);position:relative;overflow:hidden}
+  .clean::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 26px,rgba(255,255,255,.025) 26px 52px);pointer-events:none}
+  .clean .wrap{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .clean .kick{display:inline-block;background:var(--yellow);color:var(--black);font-weight:700;letter-spacing:3px;text-transform:uppercase;font-size:.85rem;padding:5px 14px;transform:skewX(-12deg);margin-bottom:18px}
+  .clean .kick>span{display:inline-block;transform:skewX(12deg)}
+  .clean .h2{margin-bottom:24px}
+  .clean p{color:#d3e2f5;font-size:1.1rem;margin-bottom:16px;max-width:560px}
+  .clean ul{list-style:none;display:grid;gap:14px;margin:26px 0 34px}
+  .clean li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+  .clean li b{display:block;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:1.35rem;letter-spacing:.5px}
+  .clean li span{color:#b9cde6}
+  .clean li i{font-style:normal;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:700;font-size:1.2rem}
+  .clean .acts{display:flex;gap:14px;flex-wrap:wrap}
+  .clean .ghost{display:inline-block;border:2px solid #fff;padding:10px 24px;font-weight:700;text-transform:uppercase;transform:skewX(-12deg)}
+  .clean .ghost>span{display:inline-block;transform:skewX(12deg)}
+  .clean .ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ba figure{position:relative;margin:0}
+  .ba img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;cursor:zoom-in;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+  .ba .lbl{position:absolute;top:12px;left:12px;font-family:Anton,sans-serif;text-transform:uppercase;font-size:1.1rem;padding:4px 14px;transform:skewX(-12deg);background:var(--yellow);color:var(--black)}
+  .ba .lbl.after{background:var(--blue);color:#fff}
+  .ba figcaption{grid-column:1/-1;color:#b9cde6;font-size:.95rem;text-align:center}
+  @media(max-width:860px){ .clean .wrap{grid-template-columns:1fr;gap:40px} }
+  .split .img .inset{border-color:var(--blue)}
+  .split .img .inset figcaption{background:var(--blue);color:#fff}
 </style>
 </head>
 <body>
@@ -329,8 +376,8 @@
       <a class="row" href="#kontakt"><span class="n">02</span><h3>Priprema za tehnički</h3><p>Sredimo sve da auto prođe tehnički pregled iz prve.</p><span class="arr">→</span></a>
       <a class="row" href="#kontakt"><span class="n">03</span><h3>Kompjuterska dijagnostika</h3><p>Očitavanje grešaka i precizno pronalaženje kvara.</p><span class="arr">→</span></a>
       <a class="row" href="#kontakt"><span class="n">04</span><h3>Zupčasti remen</h3><p>Kompletna zamjena razvoda – remen, zatezači, vodena pumpa.</p><span class="arr">→</span></a>
-      <a class="row" href="#radovi"><span class="n">05</span><h3>Pjeskarenje ventila orahovom ljuskom</h3><p>Čišćenje naslaga čađe s usisnih ventila – bez skidanja glave motora.</p><span class="arr">→</span></a>
-      <a class="row" href="#radovi"><span class="n">06</span><h3>Ultrazvučno čišćenje usisa</h3><p>Usisna grana i usis očišćeni ultrazvukom od čađe i ulja.</p><span class="arr">→</span></a>
+      <a class="row spec" href="#ciscenje-usisa"><span class="n">05</span><h3>Pjeskarenje ventila orahovom ljuskom</h3><p>Čišćenje naslaga čađe s usisnih ventila – bez skidanja glave motora.</p><span class="arr">→</span></a>
+      <a class="row spec" href="#ciscenje-usisa"><span class="n">06</span><h3>Ultrazvučno čišćenje usisa</h3><p>Usisna grana i usis očišćeni ultrazvukom od čađe i ulja.</p><span class="arr">→</span></a>
       <a class="row" href="#kontakt"><span class="n">07</span><h3>Mehanički popravci</h3><p>Motor, spojka, kočnice, ovjes i ostali sklopovi.</p><span class="arr">→</span></a>
       <a class="row" href="#kontakt"><span class="n">08</span><h3>Klima uređaji</h3><p>Servis i popravak auto klime – da ljeti hladi kako treba.</p><span class="arr">→</span></a>
       <a class="row" href="#radovi"><span class="n">09</span><h3>Automatski mjenjač</h3><p>Zamjena ulja i filtera automatskog mjenjača – pogledajte primjere ispod.</p><span class="arr">→</span></a>
@@ -368,7 +415,30 @@
   <p class="hint">← povucite za više →</p>
 </section>
 
-<section id="radovi" style="padding-top:30px">
+<section id="ciscenje-usisa" class="clean">
+  <div class="wrap">
+    <div>
+      <div class="kick"><span>Specijalnost</span></div>
+      <h2 class="h2 anton">Čišćenje <em>usisa</em></h2>
+      <p>Kod dizelaša s EGR ventilom i benzinaca s direktnim ubrizgavanjem u usisu se s vremenom skuplja čađa pomiješana s uljem. Motor gubi snagu, više troši, dimi i može nemirno raditi.</p>
+      <ul>
+        <li><i>1</i><div><b>Pjeskarenje ventila orahovom ljuskom</b><span>Naslage s usisnih ventila skidamo mlazom mljevene orahove ljuske – bez skidanja glave motora i bez oštećenja ventila.</span></div></li>
+        <li><i>2</i><div><b>Ultrazvučno čišćenje usisa</b><span>Usisnu granu i dijelove usisa skidamo i čistimo ultrazvukom, od čađe i ulja.</span></div></li>
+      </ul>
+      <div class="acts">
+        <a class="skew" href="#kontakt"><span>Pitajte za termin</span></a>
+        <a class="ghost" href="#radovi"><span>Pogledajte radove ↓</span></a>
+      </div>
+    </div>
+    <div class="ba">
+      <figure><span class="lbl">Prije</span><img src="images/radovi/bmw/prije-2.jpg" alt="Dio usisa zapečen čađom – prije čišćenja" width="1200" height="1200" loading="lazy"></figure>
+      <figure><span class="lbl after">Poslije</span><img src="images/radovi/bmw/poslije-1.jpg" alt="Isti dio usisa nakon čišćenja" width="1200" height="1200" loading="lazy"></figure>
+      <figcaption>Isti dio usisa prije i poslije čišćenja (BMW X5)</figcaption>
+    </div>
+  </div>
+</section>
+
+<section id="radovi">
   <div class="wrap"><h2 class="h2 anton">Odrađeni <em>radovi</em></h2></div>
 
   <div class="job">
@@ -530,7 +600,7 @@
     }
     function close() { lb.classList.remove('open'); }
 
-    document.querySelectorAll('.strip').forEach(function (strip) {
+    document.querySelectorAll('.strip, .ba').forEach(function (strip) {
       var imgs = Array.prototype.slice.call(strip.querySelectorAll('img'));
       imgs.forEach(function (img, i) {
         img.addEventListener('click', function () { list = imgs; show(i); lb.classList.add('open'); });
