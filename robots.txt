@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # PODESIVO: zamijeni adresu kad stranica dobije pravu domenu
-Sitemap: https://iridescent-chebakia-a876dc.netlify.app/sitemap.xml
+Sitemap: https://autoservisorsulic.hr/sitemap.xml
