@@ -38,7 +38,8 @@
       "image": [
         "https://autoservisorsulic.hr/images/logo.jpg",
         "https://autoservisorsulic.hr/images/radiona-izvana.jpg",
-        "https://autoservisorsulic.hr/images/o-nama.jpg"
+        "https://autoservisorsulic.hr/images/radiona-gume.jpg",
+        "https://autoservisorsulic.hr/images/radiona-pjeskarenje.jpg"
       ],
       "logo": "https://autoservisorsulic.hr/images/logo.jpg",
       "telephone": "+385994300950",
@@ -182,7 +183,11 @@
   .row:hover .arr{transform:translateX(6px)}
 
   .split{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
-  .split .img{background:url("images/o-nama.jpg") center/cover}
+  .split .img{position:relative;overflow:hidden;background:var(--coal)}
+  .split .img .main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+  .split .img .inset{position:absolute;right:24px;bottom:24px;width:min(38%,300px);margin:0;border:4px solid var(--yellow);box-shadow:0 18px 40px rgba(0,0,0,.55);background:var(--black)}
+  .split .img .inset img{width:100%;aspect-ratio:1;object-fit:cover}
+  .split .img .inset figcaption{font-family:Anton,sans-serif;text-transform:uppercase;font-size:.95rem;letter-spacing:.5px;padding:6px 10px;background:var(--yellow);color:var(--black)}
   .split .txt{background:var(--coal);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
   .split .txt p{color:#bdbdbd;margin-bottom:16px;font-size:1.08rem}
   .stats{display:flex;gap:36px;margin-top:20px;flex-wrap:wrap}
@@ -266,7 +271,9 @@
     .row p{grid-column:2}
     .row .arr{display:none}
     .split{grid-template-columns:1fr}
-    .split .img{min-height:300px}
+    .split .img{min-height:380px}
+    .split .img .inset{right:12px;bottom:12px;width:42%;border-width:3px}
+    .split .img .inset figcaption{font-size:.8rem;padding:4px 8px}
     .split .txt{padding:56px 24px}
     .strip img,.strip video{height:320px}
     .nav .skew{padding:10px 16px;font-size:.9rem}
@@ -328,6 +335,8 @@
   .ba .lbl.after{background:var(--blue);color:#fff}
   .ba figcaption{grid-column:1/-1;color:#b9cde6;font-size:.95rem;text-align:center}
   @media(max-width:860px){ .clean .wrap{grid-template-columns:1fr;gap:40px} }
+  .split .img .inset{border-color:var(--blue)}
+  .split .img .inset figcaption{background:var(--blue);color:#fff}
 </style>
 </head>
 <body>
@@ -378,7 +387,10 @@
 </section>
 
 <div class="split">
-  <div class="img" role="img" aria-label="Radiona Auto servisa Oršulić"></div>
+  <div class="img">
+    <img class="main" src="images/radiona-gume.jpg" alt="Strojevi za montažu i balansiranje guma u radioni Auto servisa Oršulić" width="1600" height="1600" loading="lazy">
+    <figure class="inset"><img src="images/radiona-pjeskarenje.jpg" alt="Kabina za pjeskarenje u radioni Auto servisa Oršulić" width="800" height="800" loading="lazy"><figcaption>Kabina za pjeskarenje</figcaption></figure>
+  </div>
   <div class="txt">
     <h2 class="h2 anton" style="margin-bottom:26px">Radiona<br><em>u Mravincima</em></h2>
     <p>Auto servis Oršulić je obiteljski servis u Mravincima kod Solina, blizu Kućina i Splita – mjesto gdje znate tko radi na vašem autu. Prvo kažemo što ne valja i koliko košta – tek onda krećemo.</p>
